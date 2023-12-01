@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Information</title>
+</head>
+<body>
+    <h2>Hotel Information</h2>
+    <p><em>Коваль Анастасія Віталіївна КН-20002б</em></p>
+
+    <h3>Guests</h3>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>City</th>
+        </tr>
+        {% for guest in guests %}
+        <tr>
+            <td>{{ guest.registration_number }}</td>
+            <td>{{ guest.last_name }}</td>
+            <td>{{ guest.first_name }}</td>
+            <td>{{ guest.middle_name }}</td>
+            <td>{{ guest.city }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Rooms</h3>
+    <table border="1">
+        <tr>
+            <th>Room Number</th>
+            <th>Room Count</th>
+            <th>Floor</th>
+            <th>TV</th>
+            <th>Fridge</th>
+            <th>Capacity</th>
+            <th>Category</th>
+            <th>Cost per Night</th>
+        </tr>
+        {% for room in rooms %}
+        <tr>
+            <td>{{ room.room_number }}</td>
+            <td>{{ room.room_count }}</td>
+            <td>{{ room.floor }}</td>
+            <td>{{ room.has_tv }}</td>
+            <td>{{ room.has_fridge }}</td>
+            <td>{{ room.capacity }}</td>
+            <td>{{ room.category }}</td>
+            <td>{{ room.cost_per_night }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Registrations</h3>
+    <table border="1">
+        <tr>
+            <th>Registration Code</th>
+            <th>Guest</th>
+            <th>Arrival Date</th>
+            <th>Stay Duration</th>
+            <th>Room</th>
+        </tr>
+        {% for registration in registrations %}
+        <tr>
+            <td>{{ registration.registration_code }}</td>
+            <td>{{ registration.guest }}</td>
+            <td>{{ registration.arrival_date }}</td>
+            <td>{{ registration.stay_duration }}</td>
+            <td>{{ registration.room }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
